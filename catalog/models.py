@@ -1,14 +1,16 @@
 
 from django.db import models
 
+from catalog.templatetags.my_tags import mediapath
+
 NULLABLE = {'blank': True, 'null': True}
 
 class Category(models.Model):
-    name = models.CharField(max_length=100, verbose_name='Наименование')
+    category = models.CharField(max_length=100, verbose_name='Наименование')
     description = models.TextField()
 
     def str(self):
-        return self.id, self.name
+        return self.id, self.category
 
     class Meta:
         verbose_name = 'Категория товара'

@@ -8,7 +8,7 @@ admin.site.register(Product)'''
 
 @admin.register(Category)
 class CategoryAdmin (admin.ModelAdmin):
-    list_display = ('id', 'name')
+    list_display = ('id', 'category')
     search_fields = ('category',)
 
 @admin.register(Product)

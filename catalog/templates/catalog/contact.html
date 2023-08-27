@@ -1,0 +1,56 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+
+  <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 no-hover">
+                <div class="card-body">
+                    <h4 class="card-title">Контактная информация</h4>
+                    <p class="card-text">
+                        <strong>Moscow:</strong> +7 000 000 000 00<br>
+                        <strong>St. Petersburg:</strong> +7 800 000 000 00
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card mb-4 no-hover">
+                <div class="card-body">
+                    <h4 class="card-title">Контакты</h4>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="email"></label>
+                            <input type="email" class="form-control" id="email" placeholder=" " required>
+                            <span class="floating-label">Email</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"></label>
+                            <input type="password" class="form-control" id="password" placeholder=" " required>
+                            <span class="floating-label">Password</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message"></label>
+                            <textarea class="form-control" id="message" rows="3" placeholder=" " required></textarea>
+                            <span class="floating-label">Message</span>
+
+                        </div>
+                        <button class="btn btn-primary form-control" type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 mt-4">
+            <div class="card no-hover">
+                <div class="card-body">
+                    <h4 class="card-title">Additional Content</h4>
+                    <p class="card-text">This is some content added on the right-hand side.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
