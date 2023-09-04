@@ -14,7 +14,7 @@
     <div class="row">
         <div class="leftcolumn">
             <div class="card no-hover">
-                <h2>{{ object.title }}</h2>
+                <h2>{{ object.title }} ({{object.slug}})</h2>
                 <h5> {{ object.date_uploaded|date }}</h5>
                 <img class="card-img-top"
                      src="/media/{{ object.image }}"
@@ -29,6 +29,8 @@
                 <br>
                 <p>{{ object.content }}</p>
             </div>
+                </div class="card-footer">
+                Просмотры: {{object.views_count}} </div>
             <div class="card">
                 <h2>Discusion</h2>
                 <p>Some text..</p>
@@ -47,9 +49,7 @@
                 <br>
                 <div class="fakeimg">Image</div>
                 <br>
-                <div class="fakeimg">Image</div>
-                <br>
-                <div class="fakeimg">Image</div>
+
             </div>
         </div>
     </div>
