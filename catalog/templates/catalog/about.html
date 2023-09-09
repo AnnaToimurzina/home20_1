@@ -4,27 +4,31 @@
 
 
 <main>
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col-12 mb-5">
+        <a class="btn btn-outline-primary" href="{% url 'catalog:create_product' %}">Добавить продукт</a>
+      <div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         {% for object in object_list %}
-        <div class="col">
-          <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>{{object}}</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">{{ description|slice:":100" }}</text></svg>
+        <div class="col-md-4">
+          <div class="card mb-4 box-shadow">
             <div class="card-body">
-              <p class="card-text"> {{object}} </p>
+              <p class="card-text">
+                {% if object.is_active %}
+                 {{object|title}}
+                {% else %}
+                 <span class="text-muted"> {{object|title}}<span>
+                   {% endif %}
+              </p>
               <div class="d-flex justify-content-between align-items-center">
-
-              <p class="card-text"> {{object}} </p>
-
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-body-secondary">  </small>
               </div>
             </div>
           </div>
         </div>
+
 
 
         {% endfor %}
