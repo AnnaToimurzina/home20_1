@@ -10,8 +10,13 @@
                     <form method="post">
                     {% csrf_token %}
                     {{ form.as_p }}
-                        <button type="submit" class="btn btn-primary">Сохранить</button>
+                        <button type="submit" class="btn btn-primary">Сохранить продукт</button>
 
+                    <form method="post">
+                    {% csrf_token %}
+                    {{ version_form.as_p }}
+                    <button type="submit" class="btn btn-primary">Создать версию</button>
+                    </form>
                         <form>
                 </div>
                 </div>
